@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Eazees Restaurant</title>
+    <link rel="stylesheet" href="../client/css/style.css">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, rgba(44,62,80,0.9), rgba(52,73,94,0.9)),
+                        url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1600') center/cover;
+            color: white;
+            text-align: center;
+            padding: 120px 0 80px;
+            margin-top: 70px;
+        }
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        .faq-section {
+            padding: 60px 0;
+            background: white;
+            min-height: 60vh;
+        }
+        .breadcrumb {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+        .breadcrumb a {
+            color: #ffd700;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 2px solid #e8e8e8;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        .faq-item:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-color: #2c3e50;
+        }
+        .faq-item.active {
+            border-color: #2c3e50;
+            box-shadow: 0 8px 25px rgba(44,62,80,0.15);
+        }
+        .faq-question {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .faq-item.active .faq-question {
+            background: #2c3e50;
+            color: white;
+        }
+        .faq-question:hover {
+            background: #e9ecef;
+        }
+        .faq-item.active .faq-question:hover {
+            background: #34495e;
+        }
+        .faq-question h3 {
+            margin: 0;
+            color: inherit;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .faq-toggle {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2c3e50;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-toggle {
+            color: white;
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            background: white;
+        }
+        .faq-item.active .faq-answer {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+        .faq-answer p {
+            color: #555;
+            line-height: 1.7;
+            margin: 0;
+            font-size: 1rem;
+        }
+        .faq-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        .category-btn {
+            padding: 8px 20px;
+            border: 2px solid #e0e0e0;
+            background: white;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        .category-btn:hover,
+        .category-btn.active {
+            background: #2c3e50;
+            color: white;
+            border-color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="../index.html" style="color: white; text-decoration: none;">🍽️ Eazees Restaurant</a></h1>
+            </div>
+            <nav class="nav">
+                <a href="../index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="faq.html" style="color: #ffd700;">FAQ</a>
+                <a href="contact.html">Contact</a>
+                <a href="cart.html" class="cart-link">🛒 Cart (<span id="cartCount">0</span>)</a>
+                <a href="history.html">📋 History</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> > <span>FAQ</span>
+            </div>
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions about our services</p>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-categories">
+                <button class="category-btn active" onclick="filterFAQ('all')">All Questions</button>
+                <button class="category-btn" onclick="filterFAQ('ordering')">Ordering</button>
+                <button class="category-btn" onclick="filterFAQ('delivery')">Delivery</button>
+                <button class="category-btn" onclick="filterFAQ('payment')">Payment</button>
+                <button class="category-btn" onclick="filterFAQ('food')">Food</button>
+            </div>
+
+            <div class="faq-container" id="faqContainer">
+                <!-- FAQ items will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Eazees Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../client/js/faq.js"></script>
+    <script src="../client/js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Eazees Restaurant</title>
+    <link rel="stylesheet" href="../client/css/style.css">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, rgba(44,62,80,0.9), rgba(52,73,94,0.9)),
+                        url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1600') center/cover;
+            color: white;
+            text-align: center;
+            padding: 120px 0 80px;
+            margin-top: 70px;
+        }
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        .menu-section {
+            padding: 60px 0;
+            background: #f8f9fa;
+            min-height: 60vh;
+        }
+        .breadcrumb {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+        .breadcrumb a {
+            color: #ffd700;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .search-filter-container {
+            margin-bottom: 3rem;
+        }
+        .search-box {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .search-box input {
+            width: 100%;
+            max-width: 400px;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .search-box input:focus {
+            outline: none;
+            border-color: #2c3e50;
+            box-shadow: 0 0 0 3px rgba(44,62,80,0.1);
+        }
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .filter-btn {
+            padding: 10px 20px;
+            border: 2px solid #e0e0e0;
+            background: white;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #2c3e50;
+            color: white;
+            border-color: #2c3e50;
+        }
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .food-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        .food-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        .food-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .food-card:hover img {
+            transform: scale(1.05);
+        }
+        .quality {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #2c3e50;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 1;
+        }
+        .food-card-content {
+            padding: 1.5rem;
+        }
+        .food-card-content h3 {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-size: 1.2rem;
+        }
+        .price {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 1rem;
+        }
+        .order-btn {
+            background: #2c3e50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+        .order-btn:hover {
+            background: #34495e;
+            transform: translateY(-2px);
+        }
+        .add-to-cart-btn {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+        .add-to-cart-btn:hover {
+            background: #229954;
+            transform: translateY(-2px);
+        }
+        .food-card-content p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+        }
+        .available-quantity {
+            color: #888;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+        .no-items {
+            text-align: center;
+            color: #666;
+            grid-column: 1/-1;
+            padding: 3rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="../index.html" style="color: white; text-decoration: none;">🍽️ Eazees Restaurant</a></h1>
+            </div>
+            <nav class="nav">
+                <a href="../index.html">Home</a>
+                <a href="menu.html" style="color: #ffd700;">Menu</a>
+                <a href="about.html">About</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+                <a href="cart.html" class="cart-link">🛒 Cart (<span id="cartCount">0</span>)</a>
+                <a href="history.html">📋 History</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> > <span>Menu</span>
+            </div>
+            <h1>Our Menu</h1>
+            <p>Explore our delicious selection of Nigerian and international cuisine</p>
+        </div>
+    </section>
+
+    <section class="menu-section">
+        <div class="container">
+            <div class="search-filter-container">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search for food..." onkeyup="searchFood()">
+                </div>
+                
+                <div class="filter-buttons">
+                    <button class="filter-btn active" onclick="filterFood('all')">All</button>
+                    <button class="filter-btn" onclick="filterFood('chicken')">Chicken</button>
+                    <button class="filter-btn" onclick="filterFood('beef')">Beef</button>
+                    <button class="filter-btn" onclick="filterFood('rice')">Rice</button>
+                    <button class="filter-btn" onclick="filterFood('premium')">Premium</button>
+                    <button class="filter-btn" onclick="filterFood('standard')">Standard</button>
+                </div>
+            </div>
+
+            <div id="foodGrid" class="food-grid">
+                <!-- Food items will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Eazees Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../client/js/menu-page.js"></script>
+    <script src="../client/js/common.js"></script>
+</body>
+</html>

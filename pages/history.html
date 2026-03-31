@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History - Eazees Restaurant</title>
+    <link rel="stylesheet" href="../client/css/style.css">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, rgba(44,62,80,0.9), rgba(52,73,94,0.9)),
+                        url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1600') center/cover;
+            color: white;
+            text-align: center;
+            padding: 120px 0 80px;
+            margin-top: 70px;
+        }
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        .history-section {
+            padding: 60px 0;
+            background: #f8f9fa;
+            min-height: 60vh;
+        }
+        .breadcrumb {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+        .breadcrumb a {
+            color: #ffd700;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .track-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .track-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .track-input {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        .track-input:focus {
+            outline: none;
+            border-color: #2c3e50;
+            box-shadow: 0 0 0 3px rgba(44,62,80,0.1);
+        }
+        .track-btn {
+            background: #2c3e50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .track-btn:hover {
+            background: #34495e;
+            transform: translateY(-2px);
+        }
+        .history-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .history-item {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .history-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f8f9fa;
+        }
+        .order-id {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .order-status {
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .status-pending {
+            background: #f39c12;
+            color: white;
+        }
+        .status-processing {
+            background: #3498db;
+            color: white;
+        }
+        .status-delivered {
+            background: #27ae60;
+            color: white;
+        }
+        .status-cancelled {
+            background: #e74c3c;
+            color: white;
+        }
+        .order-details {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .order-items {
+            flex: 1;
+        }
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f8f9fa;
+        }
+        .order-item:last-child {
+            border-bottom: none;
+        }
+        .order-item-name {
+            font-weight: 500;
+            color: #2c3e50;
+        }
+        .order-item-quantity {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .order-item-price {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .order-info {
+            text-align: center;
+        }
+        .order-info h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        .order-info p {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0.25rem 0;
+        }
+        .order-total {
+            text-align: right;
+        }
+        .order-total h4 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        .total-amount {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        .order-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+        .action-btn {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .track-order-btn {
+            background: #3498db;
+            color: white;
+        }
+        .track-order-btn:hover {
+            background: #2980b9;
+        }
+        .reorder-btn {
+            background: #27ae60;
+            color: white;
+        }
+        .reorder-btn:hover {
+            background: #229954;
+        }
+        .empty-history {
+            text-align: center;
+            padding: 3rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .empty-history h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        .empty-history p {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        .tracking-result {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            display: none;
+        }
+        .tracking-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .tracking-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e0e0e0;
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #2c3e50;
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px #2c3e50;
+        }
+        .timeline-item.completed::before {
+            background: #27ae60;
+            box-shadow: 0 0 0 2px #27ae60;
+        }
+        .timeline-time {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .timeline-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.25rem;
+        }
+        .timeline-description {
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="../index.html" style="color: white; text-decoration: none;">🍽️ Eazees Restaurant</a></h1>
+            </div>
+            <nav class="nav">
+                <a href="../index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+                <a href="cart.html" class="cart-link">🛒 Cart (<span id="cartCount">0</span>)</a>
+                <a href="history.html" style="color: #ffd700;">📋 History</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> > <span>Order History</span>
+            </div>
+            <h1>Order History</h1>
+            <p>Track your orders and view your order history</p>
+        </div>
+    </section>
+
+    <section class="history-section">
+        <div class="container">
+            <div class="track-section">
+                <h2>Track Your Order</h2>
+                <p style="text-align: center; margin-bottom: 2rem; color: #666;">Enter your order ID to track delivery status</p>
+                <form class="track-form" onsubmit="trackOrder(event)">
+                    <input type="text" id="trackingOrderId" class="track-input" placeholder="Enter Order ID (e.g., EZ-2024-12345)" required>
+                    <button type="submit" class="track-btn">Track Order</button>
+                </form>
+                
+                <div id="trackingResult" class="tracking-result">
+                    <!-- Tracking result will be displayed here -->
+                </div>
+            </div>
+
+            <div class="history-container">
+                <h2 style="margin-bottom: 2rem; color: #2c3e50;">Your Order History</h2>
+                <div id="historyContent">
+                    <!-- History items will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Eazees Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../client/js/history.js"></script>
+    <script src="../client/js/common.js"></script>
+</body>
+</html>

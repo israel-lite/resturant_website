@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Eazees Restaurant</title>
+    <link rel="stylesheet" href="../client/css/style.css">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, rgba(44,62,80,0.9), rgba(52,73,94,0.9)),
+                        url('https://images.unsplash.com/photo-1555939594-58d4cbba1e0d?w=1600') center/cover;
+            color: white;
+            text-align: center;
+            padding: 120px 0 80px;
+            margin-top: 70px;
+        }
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+        .breadcrumb {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+        .breadcrumb a {
+            color: #ffd700;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><a href="../index.html" style="color: white; text-decoration: none;">🍽️ Eazees Restaurant</a></h1>
+            </div>
+            <nav class="nav">
+                <a href="../index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html" style="color: #ffd700;">About</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+                <a href="cart.html" class="cart-link">🛒 Cart (<span id="cartCount">0</span>)</a>
+                <a href="history.html">📋 History</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a> > <span>About</span>
+            </div>
+            <h1>About Eazees Restaurant</h1>
+            <p>Discover our story, passion for food, and commitment to bringing you the best dining experience</p>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>Welcome to Eazees Restaurant, where delicious food meets convenience! We're passionate about bringing you the best of Nigerian and international cuisine, right to your doorstep.</p>
+                    
+                    <p>Founded with a vision to make quality food accessible to everyone, we've been serving satisfied customers across Nigeria with our carefully crafted menu and exceptional service.</p>
+                    
+                    <h2>Our Mission</h2>
+                    <p>To provide delicious, high-quality meals that bring joy to our customers' lives while maintaining the highest standards of hygiene, taste, and service.</p>
+                    
+                    <h2>Why Choose Us?</h2>
+                    <div class="features">
+                        <div class="feature">
+                            <h3>🚀 Fast Delivery</h3>
+                            <p>Quick delivery to your location within 30-45 minutes</p>
+                        </div>
+                        <div class="feature">
+                            <h3>👨‍🍳 Quality Food</h3>
+                            <p>Fresh ingredients prepared by experienced chefs</p>
+                        </div>
+                        <div class="feature">
+                            <h3>💰 Affordable Prices</h3>
+                            <p>Competitive pricing without compromising on quality</p>
+                        </div>
+                        <div class="feature">
+                            <h3>🏆 Excellent Service</h3>
+                            <p>Professional staff dedicated to your satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>10,000+</h3>
+                        <p>Happy Customers</p>
+                    </div>
+                    <div class="stat">
+                        <h3>50+</h3>
+                        <p>Menu Items</p>
+                    </div>
+                    <div class="stat">
+                        <h3>24/7</h3>
+                        <p>Service Available</p>
+                    </div>
+                    <div class="stat">
+                        <h3>4.8⭐</h3>
+                        <p>Average Rating</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Eazees Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../client/js/common.js"></script>
+</body>
+</html>
