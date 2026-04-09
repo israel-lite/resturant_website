@@ -272,8 +272,10 @@ function displayFoodItems(items) {
                 <div class="available-quantity">
                     <strong>Available:</strong> ${item.quantity} plates
                 </div>
-                <button class="order-btn" onclick="orderNow(${item.id})">Order Now</button>
-                <button class="add-to-cart-btn" onclick="addToCart(${item.id}, '${item.name}', ${item.price}, '${item.image}')">Add to Cart</button>
+                <div class="button-group">
+                    <button class="order-now-btn" onclick="orderNow(${item.id})">Order Now</button>
+                    <button class="multi-order-btn" onclick="addToCart(${item.id}, '${item.name}', ${item.price}, '${item.image}')">Multi-Order</button>
+                </div>
             </div>
         </div>
     `).join('');
@@ -329,6 +331,9 @@ function applyFilters() {
 function orderNow(itemId) {
     const item = foodItems.find(i => i.id === itemId);
     if (!item) return;
+    
+    // Clear cart first for single order
+    localStorage.setItem('eazees_cart', JSON.stringify([]));
     
     // Add to cart and redirect to checkout
     addToCart(itemId, item.name, item.price, item.image);

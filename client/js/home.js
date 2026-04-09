@@ -23,6 +23,18 @@ const popularItems = [
         name: 'Chicken Wings BBQ',
         price: 3500,
         image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400'
+    },
+    {
+        id: 5,
+        name: 'Fried Rice & Chicken',
+        price: 3200,
+        image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400'
+    },
+    {
+        id: 6,
+        name: 'Moimoi Deluxe',
+        price: 1800,
+        image: 'https://images.unsplash.com/photo-1563379091339-03246963d256?w=400'
     }
 ];
 
@@ -42,11 +54,26 @@ function loadPopularItems() {
             <img src="${item.image}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400'">
             <div class="popular-content">
                 <h3>${item.name}</h3>
-                <div class="popular-price">₦${item.price.toLocaleString()}</div>
-                <button class="popular-btn" onclick="addToCart(${item.id}, '${item.name}', ${item.price}, '${item.image}')">Add to Cart</button>
+                <div class="popular-price">N${item.price.toLocaleString()}</div>
+                <div class="button-group">
+                    <button class="order-now-btn" onclick="orderNow(${item.id}, '${item.name}', ${item.price}, '${item.image}')">Order Now</button>
+                    <button class="multi-order-btn" onclick="addToCart(${item.id}, '${item.name}', ${item.price}, '${item.image}')">Multi-Order</button>
+                </div>
             </div>
         </div>
     `).join('');
+}
+
+// Order now function
+function orderNow(itemId, itemName, itemPrice, itemImage) {
+    // Clear cart first for single order
+    localStorage.setItem('eazees_cart', JSON.stringify([]));
+    
+    // Add item to cart
+    addToCart(itemId, itemName, itemPrice, itemImage);
+    
+    // Redirect to cart page
+    window.location.href = 'pages/cart.html';
 }
 
 // Add to cart function

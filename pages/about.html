@@ -38,6 +38,145 @@
         .breadcrumb a:hover {
             text-decoration: underline;
         }
+        
+        /* Footer Styles */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 0 20px;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-section h3 {
+            color: #ffd700;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .footer-section p {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            opacity: 0.9;
+        }
+        
+        .footer-section ul li a:hover {
+            color: #ffd700;
+            opacity: 1;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            background: rgba(255,215,0,0.2);
+            color: #ffd700;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .social-links a:hover {
+            background: rgba(255,215,0,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+            opacity: 0.7;
+        }
+        
+        .footer-bottom a {
+            color: #ffd700;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Body background */
+        body {
+            background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(248,249,250,0.92)),
+                        url('https://images.unsplash.com/photo-1555939594-58d4cbba1e0d?w=1600') center/cover fixed;
+            min-height: 100vh;
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #2c3e50;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav.active {
+                display: flex;
+            }
+            
+            .nav a {
+                padding: 0.8rem 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -46,6 +185,7 @@
             <div class="logo">
                 <h1><a href="../index.html" style="color: white; text-decoration: none;">🍽️ Eazees Restaurant</a></h1>
             </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">Menu</button>
             <nav class="nav">
                 <a href="../index.html">Home</a>
                 <a href="menu.html">Menu</a>
@@ -53,8 +193,8 @@
                 <a href="gallery.html">Gallery</a>
                 <a href="faq.html">FAQ</a>
                 <a href="contact.html">Contact</a>
-                <a href="cart.html" class="cart-link">🛒 Cart (<span id="cartCount">0</span>)</a>
-                <a href="history.html">📋 History</a>
+                <a href="cart.html" class="cart-link">🛒 Multi-Order (<span id="cartCount">0</span>)</a>
+                <a href="history.html">📋 Order-History</a>
             </nav>
         </div>
     </header>
@@ -125,10 +265,71 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Eazees Restaurant. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3> About Eazees</h3>
+                    <p>Your trusted partner for delicious Nigerian and international cuisine delivered fast to your doorstep.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">Facebook</a>
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                        <a href="#" aria-label="Twitter">Twitter</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="menu.html">Food Delivery</a></li>
+                        <li><a href="faq.html">Catering Services</a></li>
+                        <li><a href="gallery.html">Event Planning</a></li>
+                        <li><a href="faq.html">Customer Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li>123 Restaurant Street, Lagos, Nigeria</li>
+                        <li>Phone: +234 800-000-0000</li>
+                        <li>Email: info@eazees.com</li>
+                        <li>Hours: Mon-Sun: 9AM - 11PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Eazees Restaurant. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
         </div>
     </footer>
 
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const nav = document.querySelector('.nav');
+            nav.classList.toggle('active');
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('.nav');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!nav.contains(event.target) && !menuBtn.contains(event.target)) {
+                nav.classList.remove('active');
+            }
+        });
+    </script>
     <script src="../client/js/common.js"></script>
 </body>
 </html>
