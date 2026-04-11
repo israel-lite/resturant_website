@@ -2,39 +2,45 @@
 const popularItems = [
     {
         id: 1,
-        name: 'Grilled Chicken Peri Peri',
-        price: 4500,
-        image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400'
+        name: "Jollof Rice Special",
+        price: 3500,
+        image: "images/Jollof Rice Special.jpeg",
+        description: "Our signature jollof rice with perfectly spiced chicken"
     },
     {
         id: 2,
-        name: 'Party Jollof Rice',
-        price: 2500,
-        image: 'https://images.unsplash.com/photo-1563379091339-03246963d256?w=400'
+        name: "Fried Rice & Chicken",
+        price: 3200,
+        image: "images/Fried Rice & Chicken.jpeg",
+        description: "Crispy fried rice with tender grilled chicken"
     },
     {
         id: 3,
-        name: 'Beef Suya Special',
-        price: 3800,
-        image: 'https://images.unsplash.com/photo-1541019268-36d195833c81?w=400'
+        name: "Beef Suya Special",
+        price: 2800,
+        image: "images/Beef Suya Special.jpeg",
+        description: "Spicy beef suya with traditional seasoning"
     },
     {
         id: 4,
-        name: 'Chicken Wings BBQ',
-        price: 3500,
-        image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400'
+        name: "Chicken Burger Deluxe",
+        price: 2500,
+        image: "images/Chicken Burger Deluxe.jpeg",
+        description: "Juicy chicken burger with fresh vegetables"
     },
     {
         id: 5,
-        name: 'Fried Rice & Chicken',
-        price: 3200,
-        image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400'
+        name: "Moimoi Deluxe",
+        price: 1500,
+        image: "images/Moimoi Deluxe png.jpeg",
+        description: "Steamed bean pudding with fish and spices"
     },
     {
         id: 6,
-        name: 'Moimoi Deluxe',
-        price: 1800,
-        image: 'https://images.unsplash.com/photo-1563379091339-03246963d256?w=400'
+        name: "Party Jollof Rice",
+        price: 4500,
+        image: "images/Party Jollof Rice.jpeg",
+        description: "Large portion perfect for sharing at parties"
     }
 ];
 

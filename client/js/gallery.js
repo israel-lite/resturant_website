@@ -2,87 +2,171 @@
 const galleryImages = [
     {
         id: 1,
-        src: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400',
+        src: '../images/Jollof Rice Special.jpeg',
         title: 'Jollof Rice Special',
         category: 'food',
         description: 'Our signature jollof rice with chicken'
     },
     {
         id: 2,
-        src: 'https://images.unsplash.com/photo-1555939594-58d4cbba1e0d?w=400',
+        src: '../images/Grilled Chicken Peri Peri.jpeg',
         title: 'Grilled Chicken Peri Peri',
         category: 'food',
         description: 'Spicy grilled chicken with special seasoning'
     },
     {
         id: 3,
-        src: 'https://images.unsplash.com/photo-1541019268-36d195833c81?w=400',
-        title: 'Beef Suya',
+        src: '../images/Beef Suya Special.jpeg',
+        title: 'Beef Suya Special',
         category: 'food',
         description: 'Traditional Nigerian beef suya'
     },
     {
         id: 4,
-        src: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400',
-        title: 'Restaurant Interior',
-        category: 'restaurant',
-        description: 'Our modern dining area'
+        src: '../images/Fried Rice & Chicken.jpeg',
+        title: 'Fried Rice & Chicken',
+        category: 'food',
+        description: 'Classic fried rice with tender chicken'
     },
     {
         id: 5,
-        src: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=400',
-        title: 'Kitchen',
-        category: 'restaurant',
-        description: 'Our state-of-the-art kitchen'
+        src: '../images/Chicken Burger Deluxe.jpeg',
+        title: 'Chicken Burger Deluxe',
+        category: 'food',
+        description: 'Juicy chicken burger with fresh vegetables'
     },
     {
         id: 6,
-        src: 'https://images.unsplash.com/photo-1522336579193-7e30c983b868?w=400',
-        title: 'Private Dining',
-        category: 'restaurant',
-        description: 'Exclusive private dining area'
+        src: '../images/Beef Steak Pepper Soup.jpeg',
+        title: 'Beef Steak Pepper Soup',
+        category: 'food',
+        description: 'Tender beef in aromatic pepper soup'
     },
     {
         id: 7,
-        src: 'https://images.unsplash.com/photo-1464207687429-7505649dae38?w=400',
-        title: 'Birthday Celebration',
-        category: 'events',
-        description: 'Birthday party celebration'
+        src: '../images/Vegetable Fried Rice.jpeg',
+        title: 'Vegetable Fried Rice',
+        category: 'food',
+        description: 'Colorful mixed vegetables fried rice'
     },
     {
         id: 8,
-        src: 'https://images.unsplash.com/photo-1511799548341-02855e4b8b5a?w=400',
-        title: 'Corporate Event',
-        category: 'events',
-        description: 'Corporate dinner event'
+        src: '../images/Chicken Wings BBQ.jpeg',
+        title: 'Chicken Wings BBQ',
+        category: 'food',
+        description: 'Tender chicken wings with BBQ sauce'
     },
     {
         id: 9,
-        src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400',
-        title: 'Fried Rice Platter',
+        src: '../images/Beef Stir Fry.jpeg',
+        title: 'Beef Stir Fry',
         category: 'food',
-        description: 'Delicious fried rice with vegetables'
+        description: 'Quick beef stir fry with vegetables'
     },
     {
         id: 10,
-        src: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400',
-        title: 'Food Presentation',
+        src: '../images/Coconut Rice & Shrimp.jpeg',
+        title: 'Coconut Rice & Shrimp',
         category: 'food',
-        description: 'Beautiful food presentation'
+        description: 'Creamy coconut rice with succulent shrimp'
     },
     {
         id: 11,
-        src: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400',
-        title: 'Team Building',
-        category: 'events',
-        description: 'Corporate team building event'
+        src: '../images/Chicken Salad.jpeg',
+        title: 'Chicken Salad',
+        category: 'food',
+        description: 'Fresh garden salad with grilled chicken'
     },
     {
         id: 12,
-        src: 'https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=400',
-        title: 'Bar Area',
-        category: 'restaurant',
-        description: 'Our fully stocked bar'
+        src: '../images/Beef Noodles.jpeg',
+        title: 'Beef Noodles',
+        category: 'food',
+        description: 'Stir-fried noodles with tender beef'
+    },
+    {
+        id: 13,
+        src: '../images/Spicy Chicken Shawarma.jpeg',
+        title: 'Spicy Chicken Shawarma',
+        category: 'food',
+        description: 'Middle-eastern style chicken shawarma'
+    },
+    {
+        id: 14,
+        src: '../images/Banga Rice & Fish.jpeg',
+        title: 'Banga Rice & Fish',
+        category: 'food',
+        description: 'Traditional Niger Delta banga rice'
+    },
+    {
+        id: 15,
+        src: '../images/Beef Pepperoni Pizza.jpeg',
+        title: 'Beef Pepperoni Pizza',
+        category: 'food',
+        description: 'Classic pizza with beef pepperoni'
+    },
+    {
+        id: 16,
+        src: '../images/Chicken Pot Pie.jpeg',
+        title: 'Chicken Pot Pie',
+        category: 'food',
+        description: 'Creamy chicken and vegetable pie'
+    },
+    {
+        id: 17,
+        src: '../images/Jollof Spaghetti.jpeg',
+        title: 'Jollof Spaghetti',
+        category: 'food',
+        description: 'Nigerian-style jollof pasta'
+    },
+    {
+        id: 18,
+        src: '../images/Beef Meatballs.jpeg',
+        title: 'Beef Meatballs',
+        category: 'food',
+        description: 'Savory beef meatballs in tomato sauce'
+    },
+    {
+        id: 19,
+        src: '../images/Chicken Spring Rolls.jpeg',
+        title: 'Chicken Spring Rolls',
+        category: 'food',
+        description: 'Crispy spring rolls with chicken'
+    },
+    {
+        id: 20,
+        src: '../images/Ofada Rice & Stew.jpeg',
+        title: 'Ofada Rice & Stew',
+        category: 'food',
+        description: 'Traditional ofada rice with palm oil stew'
+    },
+    {
+        id: 21,
+        src: '../images/Beef Gizzard Sauce.jpeg',
+        title: 'Beef Gizzard Sauce',
+        category: 'food',
+        description: 'Spicy gizzard sauce perfect with rice'
+    },
+    {
+        id: 22,
+        src: '../images/Moimoi Deluxe png.jpeg',
+        title: 'Moimoi Deluxe',
+        category: 'food',
+        description: 'Steamed bean pudding with fish and spices'
+    },
+    {
+        id: 23,
+        src: '../images/Waakye Leaves.jpeg',
+        title: 'Waakye Leaves',
+        category: 'food',
+        description: 'Ghanaian-style rice and beans'
+    },
+    {
+        id: 24,
+        src: '../images/Party Jollof Rice.jpeg',
+        title: 'Party Jollof Rice',
+        category: 'food',
+        description: 'Large portion perfect for sharing'
     }
 ];
 
@@ -104,7 +188,7 @@ function renderGallery() {
     
     galleryGrid.innerHTML = filteredImages.map(image => `
         <div class="gallery-item" onclick="openImageModal('${image.src}', '${image.title}', '${image.description}')">
-            <img src="${image.src}" alt="${image.title}" onerror="this.src='https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400'">
+            <img src="${image.src}" alt="${image.title}" onerror="this.src='../images/photo-1517248135467-4c7edcad34c4.jpeg'">
             <div class="gallery-overlay">
                 <h3>${image.title}</h3>
                 <p>${image.description}</p>

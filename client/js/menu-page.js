@@ -6,7 +6,7 @@ const foodItems = [
         price: 4500,
         quality: 'Premium',
         category: 'chicken',
-        image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400',
+        image: '../images/Grilled Chicken Peri Peri.jpeg',
         description: 'Succulent grilled chicken marinated in our special peri peri spice blend',
         quantity: 15
     },
@@ -16,7 +16,7 @@ const foodItems = [
         price: 2500,
         quality: 'Standard',
         category: 'rice',
-        image: 'https://images.unsplash.com/photo-1563379091339-03246963d256?w=400',
+        image: '../images/Party Jollof Rice.jpeg',
         description: 'Authentic Nigerian jollof rice that brings the party to your plate',
         quantity: 30
     },
@@ -26,7 +26,7 @@ const foodItems = [
         price: 3800,
         quality: 'Premium',
         category: 'beef',
-        image: 'https://images.unsplash.com/photo-1541019268-36d195833c81?w=400',
+        image: '../images/Beef Suya Special.jpeg',
         description: 'Spicy beef suya with traditional Hausa spices and vegetables',
         quantity: 20
     },
@@ -36,7 +36,7 @@ const foodItems = [
         price: 3200,
         quality: 'Standard',
         category: 'rice',
-        image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400',
+        image: '../images/Fried Rice & Chicken.jpeg',
         description: 'Classic fried rice with tender chicken pieces and mixed vegetables',
         quantity: 25
     },
@@ -46,7 +46,7 @@ const foodItems = [
         price: 2800,
         quality: 'Standard',
         category: 'chicken',
-        image: 'https://images.unsplash.com/photo-1555939594-58d4cbba1e0d?w=400',
+        image: '../images/Chicken Burger Deluxe.jpeg',
         description: 'Juicy chicken patty with fresh lettuce, tomato, and special sauce',
         quantity: 18
     },
@@ -56,7 +56,7 @@ const foodItems = [
         price: 4200,
         quality: 'Premium',
         category: 'beef',
-        image: 'https://images.unsplash.com/photo-1541019268-36d195833c81?w=400',
+        image: '../images/Beef Steak Pepper Soup.jpeg',
         description: 'Tender beef in aromatic pepper soup with local spices',
         quantity: 12
     },
@@ -66,7 +66,7 @@ const foodItems = [
         price: 2200,
         quality: 'Standard',
         category: 'rice',
-        image: 'https://images.unsplash.com/photo-1563379091339-03246963d256?w=400',
+        image: '../images/Vegetable Fried Rice.jpeg',
         description: 'Colorful mixed vegetables fried rice, perfect for vegetarians',
         quantity: 20
     },
@@ -76,19 +76,19 @@ const foodItems = [
         price: 3500,
         quality: 'Premium',
         category: 'chicken',
-        image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400',
+        image: '../images/Chicken Wings BBQ.jpeg',
         description: 'Tender chicken wings glazed with our signature BBQ sauce',
         quantity: 22
     },
     {
         id: 9,
-        name: 'Beef Burrito',
-        price: 3000,
+        name: 'Beef Stir Fry',
+        price: 3100,
         quality: 'Standard',
         category: 'beef',
-        image: 'https://images.unsplash.com/photo-1541019268-36d195833c81?w=400',
-        description: 'Seasoned beef wrapped in soft tortilla with rice and beans',
-        quantity: 15
+        image: '../images/Beef Stir Fry.jpeg',
+        description: 'Quick beef stir fry with colorful vegetables and soy sauce',
+        quantity: 20
     },
     {
         id: 10,
@@ -96,7 +96,7 @@ const foodItems = [
         price: 3800,
         quality: 'Premium',
         category: 'rice',
-        image: 'https://images.unsplash.com/photo-1563379091339-03246963d256?w=400',
+        image: '../images/Coconut Rice & Shrimp.jpeg',
         description: 'Creamy coconut rice with succulent shrimp and herbs',
         quantity: 10
     },
@@ -106,7 +106,7 @@ const foodItems = [
         price: 2000,
         quality: 'Standard',
         category: 'chicken',
-        image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400',
+        image: '../images/Chicken Salad.jpeg',
         description: 'Fresh garden salad with grilled chicken strips and light dressing',
         quantity: 25
     },
@@ -116,7 +116,7 @@ const foodItems = [
         price: 2600,
         quality: 'Standard',
         category: 'beef',
-        image: 'https://images.unsplash.com/photo-1541019268-36d195833c81?w=400',
+        image: '../images/Beef Noodles.jpeg',
         description: 'Stir-fried noodles with tender beef strips and vegetables',
         quantity: 18
     },
@@ -126,7 +126,7 @@ const foodItems = [
         price: 3200,
         quality: 'Premium',
         category: 'chicken',
-        image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400',
+        image: '../images/Spicy Chicken Shawarma.jpeg',
         description: 'Middle-eastern style chicken wrapped in pita with garlic sauce',
         quantity: 20
     },
@@ -136,7 +136,7 @@ const foodItems = [
         price: 3500,
         quality: 'Premium',
         category: 'rice',
-        image: 'https://images.unsplash.com/photo-1563379091339-03246963d256?w=400',
+        image: '../images/Banga Rice & Fish.jpeg',
         description: 'Traditional Niger Delta banga rice with fresh fish',
         quantity: 16
     },
@@ -146,19 +146,19 @@ const foodItems = [
         price: 4200,
         quality: 'Premium',
         category: 'beef',
-        image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400',
+        image: '../images/Beef Pepperoni Pizza.jpeg',
         description: 'Classic pizza with beef pepperoni and mozzarella cheese',
         quantity: 14
     },
     {
         id: 16,
-        name: 'Chicken Tikka Masala',
-        price: 3800,
+        name: 'Chicken Pot Pie',
+        price: 3600,
         quality: 'Premium',
         category: 'chicken',
-        image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400',
-        description: 'Indian-style chicken in creamy tomato curry with basmati rice',
-        quantity: 12
+        image: '../images/Chicken Pot Pie.jpeg',
+        description: 'Creamy chicken and vegetable pie with flaky crust',
+        quantity: 15
     },
     {
         id: 17,
@@ -166,7 +166,7 @@ const foodItems = [
         price: 2300,
         quality: 'Standard',
         category: 'rice',
-        image: 'https://images.unsplash.com/photo-1563379091339-03246963d256?w=400',
+        image: '../images/Jollof Spaghetti.jpeg',
         description: 'Nigerian-style jollof pasta with mixed vegetables',
         quantity: 28
     },
@@ -176,7 +176,7 @@ const foodItems = [
         price: 3400,
         quality: 'Premium',
         category: 'beef',
-        image: 'https://images.unsplash.com/photo-1541019268-36d195833c81?w=400',
+        image: '../images/Beef Meatballs.jpeg',
         description: 'Savory beef meatballs in rich tomato sauce',
         quantity: 18
     },
@@ -186,7 +186,7 @@ const foodItems = [
         price: 2800,
         quality: 'Standard',
         category: 'chicken',
-        image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400',
+        image: '../images/Chicken Spring Rolls.jpeg',
         description: 'Crispy spring rolls filled with seasoned chicken and vegetables',
         quantity: 24
     },
@@ -196,29 +196,29 @@ const foodItems = [
         price: 2900,
         quality: 'Standard',
         category: 'rice',
-        image: 'https://images.unsplash.com/photo-1563379091339-03246963d256?w=400',
+        image: '../images/Ofada Rice & Stew.jpeg',
         description: 'Traditional ofada rice with palm oil stew and assorted meat',
         quantity: 22
     },
     {
         id: 21,
-        name: 'Beef Stir Fry',
-        price: 3100,
+        name: 'Beef Gizzard Sauce',
+        price: 3300,
         quality: 'Standard',
         category: 'beef',
-        image: 'https://images.unsplash.com/photo-1541019268-36d195833c81?w=400',
-        description: 'Quick beef stir fry with colorful vegetables and soy sauce',
-        quantity: 20
+        image: '../images/Beef Gizzard Sauce.jpeg',
+        description: 'Spicy gizzard sauce perfect with rice or yam',
+        quantity: 16
     },
     {
         id: 22,
-        name: 'Chicken Pot Pie',
-        price: 3600,
-        quality: 'Premium',
-        category: 'chicken',
-        image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400',
-        description: 'Creamy chicken and vegetable pie with flaky crust',
-        quantity: 15
+        name: 'Moimoi Deluxe',
+        price: 1500,
+        quality: 'Standard',
+        category: 'other',
+        image: '../images/Moimoi Deluxe png.jpeg',
+        description: 'Steamed bean pudding with fish and spices',
+        quantity: 20
     },
     {
         id: 23,
@@ -226,19 +226,9 @@ const foodItems = [
         price: 2700,
         quality: 'Standard',
         category: 'rice',
-        image: 'https://images.unsplash.com/photo-1563379091339-03246963d256?w=400',
+        image: '../images/Waakye Leaves.jpeg',
         description: 'Ghanaian-style rice and beans with waakye leaves',
         quantity: 18
-    },
-    {
-        id: 24,
-        name: 'Beef Gizzard Sauce',
-        price: 3300,
-        quality: 'Standard',
-        category: 'beef',
-        image: 'https://images.unsplash.com/photo-1541019268-36d195833c81?w=400',
-        description: 'Spicy gizzard sauce perfect with rice or yam',
-        quantity: 16
     }
 ];
 
